@@ -1,0 +1,50 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/tutorial.css' %}">
+
+<h2>grokonez Tutorials</h2>
+
+<a href="{% url 'upload_tutorial' %}">Upload Image</a>
+<br>
+<a href="{% url 'home' %}">Home Page</a>
+<br>
+<a href="{% url 'home' %}">Add client Phone Numbers</a>
+<br>
+<a href="{% url 'home' %}">Send clients messages</a>
+<br>
+
+{% if tutorials %}
+<table style="margin: 20px;">
+	<thead>
+		<tr>
+			<th>Feature Image</th>
+			<th>Title</th>
+			<th>Category</th>
+			<th>Attachment</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for tutorial in tutorials %}
+		<tr>
+			<td><img src="{{ tutorial.feature_image.url }}" width="150px"></td>
+			<td>{{ tutorial.title }}</td>
+			<td>{{ tutorial.category }}</td>
+			<td><a href="{{ tutorial.attachment.url }}" target="_blank">Download</a></td>
+			<td>
+				<form method="post" action="{% url 'tutorial' tutorial.pk %}">
+					{% csrf_token %}
+					<button type="submit">Delete</button>
+				</form>
+			</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+{% endif %}
+
+
+{% if request.user.is_authenticated %}
+<li><a href="/accounts/logout"><button class="btn btn-danger">{{ request.user }} | Logout</button></a></li>
+{% else %}
+<li><a href="/accounts/login" class="btn btn-success" style="text-transform: uppercase;">Login</a></li>
+{% endif %}
