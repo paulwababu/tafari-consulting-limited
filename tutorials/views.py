@@ -212,3 +212,7 @@ def establishing_positive_relationships_managing_conflict(request):
 def expanding_your_influence_understanding_the_psychology_of_persuasion(request):
     tutorials = Tutorial.objects.all()
     return render(request, 'tutorial/expanding_your_influence_understanding_the_psychology_of_persuasion.html', { 'tutorials' : tutorials})
+
+def conflict_management_and_negotiation_skills(request):
+    tutorials = Tutorial.objects.all()
+    return render(request, 'tutorial/conflict_management_and_negotiation_skills.html', { 'tutorials' : tutorials})
