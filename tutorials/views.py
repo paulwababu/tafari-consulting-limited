@@ -232,3 +232,7 @@ def digital_branding(request):
 def i_m_possible_sales(request):
     tutorials = Tutorial.objects.all()
     return render(request, 'tutorial/i_m_possible_sales.html', { 'tutorials' : tutorials})
+
+def sponsorship_marketing(request):
+    tutorials = Tutorial.objects.all()
+    return render(request, 'tutorial/sponsorship_marketing.html', { 'tutorials' : tutorials})
