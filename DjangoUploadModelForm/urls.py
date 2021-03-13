@@ -51,6 +51,7 @@ urlpatterns = [
     path('conflict_management_and_negotiation_skills/', views.conflict_management_and_negotiation_skills, name="conflict_management_and_negotiation_skills"),
     path('high_impact_communication_skills/', views.high_impact_communication_skills, name="high_impact_communication_skills"),
     path('mastering_the_art_of_business_communication/', views.mastering_the_art_of_business_communication, name="mastering_the_art_of_business_communication"),
+    path('digital_branding/', views.digital_branding, name="digital_branding"),
     path('accounts/login/', views.signin, name="login"),
     path('accounts/logout/', views.signout, name="logout"),
     path('tutorials/<int:pk>', views.deleteTutorial, name='tutorial'),

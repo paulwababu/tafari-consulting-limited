@@ -224,3 +224,7 @@ def high_impact_communication_skills(request):
 def mastering_the_art_of_business_communication(request):
     tutorials = Tutorial.objects.all()
     return render(request, 'tutorial/mastering_the_art_of_business_communication.html', { 'tutorials' : tutorials})
+
+def digital_branding(request):
+    tutorials = Tutorial.objects.all()
+    return render(request, 'tutorial/digital_branding.html', { 'tutorials' : tutorials})
