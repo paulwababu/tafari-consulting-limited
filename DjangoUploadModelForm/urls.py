@@ -49,6 +49,7 @@ urlpatterns = [
     path('establishing_positive_relationships_managing_conflict/', views.establishing_positive_relationships_managing_conflict, name="establishing_positive_relationships_managing_conflict"),
     path('expanding_your_influence_understanding_the_psychology_of_persuasion/', views.expanding_your_influence_understanding_the_psychology_of_persuasion, name="expanding_your_influence_understanding_the_psychology_of_persuasion"),
     path('conflict_management_and_negotiation_skills/', views.conflict_management_and_negotiation_skills, name="conflict_management_and_negotiation_skills"),
+    path('high_impact_communication_skills/', views.high_impact_communication_skills, name="high_impact_communication_skills"),
     path('accounts/login/', views.signin, name="login"),
     path('accounts/logout/', views.signout, name="logout"),
     path('tutorials/<int:pk>', views.deleteTutorial, name='tutorial'),
