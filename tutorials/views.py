@@ -136,3 +136,23 @@ def strategies_of_dealing_with_dissatisfied_customers(request):
 def managing_conflict_at_work_place(request):
     tutorials = Tutorial.objects.all()
     return render(request, 'tutorial/managing_conflict_at_work_place.html', { 'tutorials' : tutorials})
+
+def retirement_planning(request):
+    tutorials = Tutorial.objects.all()
+    return render(request, 'tutorial/retirement_planning.html', { 'tutorials' : tutorials})
+
+def labour_laws_and_regulations(request):
+    tutorials = Tutorial.objects.all()
+    return render(request, 'tutorial/labour_laws_and_regulations.html', { 'tutorials' : tutorials})
+
+def coaching_yourself_and_others_for_peak_performance(request):
+    tutorials = Tutorial.objects.all()
+    return render(request, 'tutorial/coaching_yourself_and_others_for_peak_performance.html', { 'tutorials' : tutorials})
+
+def stress_management_at_the_workplace(request):
+    tutorials = Tutorial.objects.all()
+    return render(request, 'tutorial/stress_management_at_the_workplace.html', { 'tutorials' : tutorials})
+
+def data_and_record_management(request):
+    tutorials = Tutorial.objects.all()
+    return render(request, 'tutorial/data_and_record_management.html', { 'tutorials' : tutorials})
