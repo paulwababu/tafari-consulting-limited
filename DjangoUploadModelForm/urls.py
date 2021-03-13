@@ -42,6 +42,13 @@ urlpatterns = [
     path('knowledge_management/', views.knowledge_management, name="knowledge_management"),
     path('beyond_time_management/', views.beyond_time_management, name="beyond_time_management"),
     path('meetings_and_minute_management/', views.meetings_and_minute_management, name="meetings_and_minute_management"),
+    path('public_speaking/', views.public_speaking, name="public_speaking"),
+    path('media_training/', views.media_training, name="media_training"),
+    path('advanced_leadership_communication_strategies/', views.advanced_leadership_communication_strategies, name=""),
+    path('developing_your_negotiation_skills/', views.developing_your_negotiation_skills, name="developing_your_negotiation_skills"),
+    path('establishing_positive_relationships_managing_conflict/', views.establishing_positive_relationships_managing_conflict, name="establishing_positive_relationships_managing_conflict"),
+    path('expanding_your_influence_understanding_the_psychology_of_persuasion/', views.expanding_your_influence_understanding_the_psychology_of_persuasion, name="expanding_your_influence_understanding_the_psychology_of_persuasion"),
+    
     path('accounts/login/', views.signin, name="login"),
     path('accounts/logout/', views.signout, name="logout"),
     path('tutorials/<int:pk>', views.deleteTutorial, name='tutorial'),

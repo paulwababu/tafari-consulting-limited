@@ -188,3 +188,27 @@ def beyond_time_management(request):
 def meetings_and_minute_management(request):
     tutorials = Tutorial.objects.all()
     return render(request, 'tutorial/meetings_and_minute_management.html', { 'tutorials' : tutorials})
+
+def public_speaking(request):
+    tutorials = Tutorial.objects.all()
+    return render(request, 'tutorial/public_speaking.html', { 'tutorials' : tutorials})
+
+def media_training(request):
+    tutorials = Tutorial.objects.all()
+    return render(request, 'tutorial/media_training.html', { 'tutorials' : tutorials})
+
+def advanced_leadership_communication_strategies(request):
+    tutorials = Tutorial.objects.all()
+    return render(request, 'tutorial/advanced_leadership_communication_strategies.html', { 'tutorials' : tutorials})
+
+def developing_your_negotiation_skills(request):
+    tutorials = Tutorial.objects.all()
+    return render(request, 'tutorial/developing_your_negotiation_skills.html', { 'tutorials' : tutorials})
+
+def establishing_positive_relationships_managing_conflict(request):
+    tutorials = Tutorial.objects.all()
+    return render(request, 'tutorial/establishing_positive_relationships_managing_conflict.html', { 'tutorials' : tutorials})
+
+def expanding_your_influence_understanding_the_psychology_of_persuasion(request):
+    tutorials = Tutorial.objects.all()
+    return render(request, 'tutorial/expanding_your_influence_understanding_the_psychology_of_persuasion.html', { 'tutorials' : tutorials})
