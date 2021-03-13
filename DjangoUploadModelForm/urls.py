@@ -50,6 +50,7 @@ urlpatterns = [
     path('expanding_your_influence_understanding_the_psychology_of_persuasion/', views.expanding_your_influence_understanding_the_psychology_of_persuasion, name="expanding_your_influence_understanding_the_psychology_of_persuasion"),
     path('conflict_management_and_negotiation_skills/', views.conflict_management_and_negotiation_skills, name="conflict_management_and_negotiation_skills"),
     path('high_impact_communication_skills/', views.high_impact_communication_skills, name="high_impact_communication_skills"),
+    path('mastering_the_art_of_business_communication/', views.mastering_the_art_of_business_communication, name="mastering_the_art_of_business_communication"),
     path('accounts/login/', views.signin, name="login"),
     path('accounts/logout/', views.signout, name="logout"),
     path('tutorials/<int:pk>', views.deleteTutorial, name='tutorial'),

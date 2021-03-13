@@ -220,3 +220,7 @@ def conflict_management_and_negotiation_skills(request):
 def high_impact_communication_skills(request):
     tutorials = Tutorial.objects.all()
     return render(request, 'tutorial/high_impact_communication_skills.html', { 'tutorials' : tutorials})
+
+def mastering_the_art_of_business_communication(request):
+    tutorials = Tutorial.objects.all()
+    return render(request, 'tutorial/mastering_the_art_of_business_communication.html', { 'tutorials' : tutorials})
