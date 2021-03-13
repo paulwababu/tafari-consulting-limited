@@ -179,7 +179,7 @@
    <body class="home page-template-default page page-id-4103 gdlr-core-body _masterslider _msp_version_3.0.6 realfactory-body realfactory-body-front realfactory-full  realfactory-with-sticky-navigation gdlr-core-link-to-lightbox">
       <div id="loftloader-wrapper" class="pl-imgloading">
          <div class="loader-inner">
-            <div id="loader"><span></span><img src="http://tafari-consulting.com/wp-content/uploads/TCI-favicon-Logo.png" alt="preloder"></div>
+            <div id="loader"><span></span><img src="https://tafari-consulting.com/wp-content/uploads/TCI-favicon-Logo.png" alt="preloder"></div>
          </div>
          <div class="loader-section section-fade"></div>
       </div>
@@ -191,9 +191,15 @@
                   </span><i class="fa fa-envelope-o" style="font-size: 13px;color: #2c2a7c;margin-left: 24px;margin-right: 0px;"  ></i> <span style="font-family: roboto"> <strong>Email:</strong> info@tafari-consulting.com</span>
                </div>
                <div class="realfactory-top-bar-right realfactory-item-pdlr">
-                  <div class="realfactory-top-bar-right-text"><span style="font-family: roboto; margin-left:12px">
-                     <a target="_self" href="/accounts/login">Staff Login</a></span>
-                  </div>
+                  {% if request.user.is_authenticated %}
+				  <div class="realfactory-top-bar-right-text"><span style="font-family: roboto; margin-left:12px">
+                     <a target="_self" href="{% url 'tutorial_list' %}"><b>Image Engine</b></a></span>
+				  </div>
+				  {% else %}
+				  <div class="realfactory-top-bar-right-text"><span style="font-family: roboto; margin-left:12px">
+					<a target="_self" href="{% url 'login' %}"><b>Staff Login</b></a></span>
+				  </div>
+				  {% endif %}
                   <div class="realfactory-top-bar-right-social" ><a href="https://www.facebook.com/" target="_blank" class="realfactory-top-bar-social-icon" title="facebook" ><i class="fa fa-facebook" ></i></a><a href="#" target="_blank" class="realfactory-top-bar-social-icon" title="linkedin" ><i class="fa fa-linkedin" ></i></a><a href="https://twitter.com" target="_blank" class="realfactory-top-bar-social-icon" title="twitter" ><i class="fa fa-twitter" ></i></a><a href="#" target="_blank" class="realfactory-top-bar-social-icon" title="instagram" ><i class="fa fa-instagram" ></i></a></div>
                </div>
             </div>
@@ -226,7 +232,7 @@
                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6046">
                               <a href="#">About</a>
                               <ul class="sub-menu">
-                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3137"><a href="https://tafari-consulting.com/about-us/">About Us</a></li>
+                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3137"><a href="{% url 'about-us' %}">About Us</a></li>
                                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6027"><a href="#">Gallery</a></li>
                                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6017"><a href="#">Downloads</a></li>
                               </ul>
@@ -237,35 +243,35 @@
                                  <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-has-children menu-item-5687">
                                     <a href="https://tafari-consulting.com/leadership-programs/">Leadership Programs</a>
                                     <ul class="sub-menu">
-                                       <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6038"><a href="https://tafari-consulting.com/developing-team-creativity-initiative/">Developing Team Creativity &#038; Initiative</a></li>
-                                       <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6029"><a href="https://tafari-consulting.com/leadership-development-skills/">Leadership Development Skills</a></li>
-                                       <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6043"><a href="https://tafari-consulting.com/project-team-leadership/">Project Team Leadership</a></li>
-                                       <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6044"><a href="https://tafari-consulting.com/coaching-a-service-team/">Coaching a Service Team</a></li>
-                                       <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6037"><a href="https://tafari-consulting.com/the-voice-of-leadership/">The Voice of Leadership</a></li>
-                                       <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6075"><a href="https://tafari-consulting.com/creating-leaders-through-mentorship/">Creating Leaders through Mentorship</a></li>
-                                       <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6076"><a href="https://tafari-consulting.com/leading-change-organizational-renewal/">Leading change &#038; Organizational Renewal</a></li>
-                                       <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6077"><a href="https://tafari-consulting.com/high-impact-executive-program/">High Impact Executive Program</a></li>
-                                       <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6078"><a href="https://tafari-consulting.com/achieving-leadership-success-through-people/">Achieving Leadership Success through People</a></li>
-                                       <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6079"><a href="https://tafari-consulting.com/leading-with-emotional-intelligence/">Leading with Emotional intelligence</a></li>
+                                       <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6038"><a href="developing-team-creativity-initiative/">Developing Team Creativity &#038; Initiative</a></li>
+                                       <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6029"><a href="leadership_development_skills/">Leadership Development Skills</a></li>
+                                       <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6043"><a href="project_team_leadership/">Project Team Leadership</a></li>
+                                       <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6044"><a href="coaching_a_service_team/">Coaching a Service Team</a></li>
+                                       <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6037"><a href="the_voice_of_leadership/">The Voice of Leadership</a></li>
+                                       <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6075"><a href="creating_leaders_through_mentorship/">Creating Leaders through Mentorship</a></li>
+                                       <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6076"><a href="leading_change_organizational_renewal/">Leading change &#038; Organizational Renewal</a></li>
+                                       <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6077"><a href="high_impact_executive_program/">High Impact Executive Program</a></li>
+                                       <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6078"><a href="achieving_leadership_success_through_people/">Achieving Leadership Success through People</a></li>
+                                       <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6079"><a href="leading_with_emotional_intelligence/">Leading with Emotional intelligence</a></li>
                                     </ul>
                                  </li>
                                  <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-has-children menu-item-5629">
                                     <a href="https://tafari-consulting.com/customer-service-programs/">Customer Service Programs</a>
                                     <ul class="sub-menu">
-                                       <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6124"><a href="https://tafari-consulting.com/attitudes-for-customer-service/">Attitudes for Customer Service</a></li>
-                                       <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6125"><a href="https://tafari-consulting.com/building-customer-loyalty/">Building Customer Loyalty</a></li>
-                                       <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6126"><a href="https://tafari-consulting.com/call-centre-and-customer-care-skills/">Call Centre&#038; Customer Care Skills</a></li>
-                                       <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6127"><a href="https://tafari-consulting.com/customer-service-excellence-for-managers/">Customer Service Excellence for managers</a></li>
-                                       <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6128"><a href="https://tafari-consulting.com/how-to-exceed-customers-expectations/">How to Exceed Customers’ Expectations</a></li>
-                                       <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6129"><a href="https://tafari-consulting.com/mastering-the-telephone/">Mastering the Telephone</a></li>
-                                       <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6130"><a href="https://tafari-consulting.com/ultimate-loyalty-build-teams-that-wow-the-customer/">Ultimate Loyalty: Build Teams that “WOW” the Customer</a></li>
-                                       <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6131"><a href="https://tafari-consulting.com/strategies-of-dealing-with-dissatisfied-customers/">Strategies of Dealing with Dissatisfied Customers</a></li>
+                                       <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6124"><a href="attitudes_for_customer_service/">Attitudes for Customer Service</a></li>
+                                       <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6125"><a href="building_customer_loyalty/">Building Customer Loyalty</a></li>
+                                       <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6126"><a href="call_centre_and_customer_care_skills/">Call Centre&#038; Customer Care Skills</a></li>
+                                       <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6127"><a href="customer_service_excellence_for_managers/">Customer Service Excellence for managers</a></li>
+                                       <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6128"><a href="how_to_exceed_customers_expectations/">How to Exceed Customers’ Expectations</a></li>
+                                       <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6129"><a href="mastering_the_telephone/">Mastering the Telephone</a></li>
+                                       <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6130"><a href="ultimate_loyalty_build_teams_that_wow_the_customer/">Ultimate Loyalty: Build Teams that “WOW” the Customer</a></li>
+                                       <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6131"><a href="strategies_of_dealing_with_dissatisfied_customers/">Strategies of Dealing with Dissatisfied Customers</a></li>
                                     </ul>
                                  </li>
                                  <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-has-children menu-item-5551">
                                     <a href="https://tafari-consulting.com/human-resource-programs/">Human Resource Programs</a>
                                     <ul class="sub-menu">
-                                       <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6132"><a href="https://tafari-consulting.com/managing-conflict-at-work-place/">Managing Conflict at Work Place</a></li>
+                                       <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6132"><a href="managing_conflict_at_work_place/">Managing Conflict at Work Place</a></li>
                                        <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6133"><a href="https://tafari-consulting.com/retirement-planning/">Retirement Planning</a></li>
                                        <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6134"><a href="https://tafari-consulting.com/labour-laws-and-regulations/">Labour Laws and Regulations</a></li>
                                        <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6135"><a href="https://tafari-consulting.com/coaching-yourself-and-others-for-peak-performance/">Coaching yourself and others for Peak Performance</a></li>
@@ -380,7 +386,7 @@
                         {% if request.user.is_authenticated %}
                         <a target="_self" href="{% url 'tutorial_list' %}"><b>Image Engine</b></a></span>
                      </div>
-                     {% else %}
+                     {% else %}  
                      <a target="_self" href="/accounts/login"><b>Staff Login</b></a></span>
                   </div>
                   {% endif %}
@@ -437,8 +443,8 @@
                      <li  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-4103 current_page_item menu-item-4178 realfactory-normal-menu"><a href="https://tafari-consulting.com/">Home</a></li>
                      <li  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6046 realfactory-normal-menu">
                         <a href="#" class="sf-with-ul-pre">About</a>
-                        <ul class="sub-menu">
-                           <li  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3137" data-size="60"><a href="https://tafari-consulting.com/about-us/">About Us</a></li>
+                        <ul class="sub-menu">                                                                                                                                                 
+                           <li  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3137" data-size="60"><a href="{% url 'about-us' %}">About Us</a></li>
                            <li  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6027" data-size="60"><a href="#">Gallery</a></li>
                            <li  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6017" data-size="60"><a href="#">Downloads</a></li>
                         </ul>
@@ -449,35 +455,35 @@
                            <li  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-has-children menu-item-5687" data-size="60">
                               <a href="https://tafari-consulting.com/leadership-programs/" class="sf-with-ul-pre">Leadership Programs</a>
                               <ul class="sub-menu">
-                                 <li  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6038"><a href="https://tafari-consulting.com/developing-team-creativity-initiative/">Developing Team Creativity &#038; Initiative</a></li>
-                                 <li  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6029"><a href="https://tafari-consulting.com/leadership-development-skills/">Leadership Development Skills</a></li>
-                                 <li  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6043"><a href="https://tafari-consulting.com/project-team-leadership/">Project Team Leadership</a></li>
-                                 <li  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6044"><a href="https://tafari-consulting.com/coaching-a-service-team/">Coaching a Service Team</a></li>
-                                 <li  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6037"><a href="https://tafari-consulting.com/the-voice-of-leadership/">The Voice of Leadership</a></li>
-                                 <li  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6075"><a href="https://tafari-consulting.com/creating-leaders-through-mentorship/">Creating Leaders through Mentorship</a></li>
-                                 <li  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6076"><a href="https://tafari-consulting.com/leading-change-organizational-renewal/">Leading change &#038; Organizational Renewal</a></li>
-                                 <li  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6077"><a href="https://tafari-consulting.com/high-impact-executive-program/">High Impact Executive Program</a></li>
-                                 <li  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6078"><a href="https://tafari-consulting.com/achieving-leadership-success-through-people/">Achieving Leadership Success through People</a></li>
-                                 <li  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6079"><a href="https://tafari-consulting.com/leading-with-emotional-intelligence/">Leading with Emotional intelligence</a></li>
+                                 <li  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6038"><a href="developing-team-creativity-initiative/">Developing Team Creativity &#038; Initiative</a></li>
+                                 <li  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6029"><a href="leadership_development_skills/">Leadership Development Skills</a></li>
+                                 <li  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6043"><a href="project_team_leadership/">Project Team Leadership</a></li>
+                                 <li  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6044"><a href="coaching_a_service_team/">Coaching a Service Team</a></li>
+                                 <li  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6037"><a href="the_voice_of_leadership/">The Voice of Leadership</a></li>
+                                 <li  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6075"><a href="creating_leaders_through_mentorship/">Creating Leaders through Mentorship</a></li>
+                                 <li  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6076"><a href="leading_change_organizational_renewal/">Leading change &#038; Organizational Renewal</a></li>
+                                 <li  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6077"><a href="high_impact_executive_program/">High Impact Executive Program</a></li>
+                                 <li  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6078"><a href="achieving_leadership_success_through_people/">Achieving Leadership Success through People</a></li>
+                                 <li  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6079"><a href="leading_with_emotional_intelligence/">Leading with Emotional intelligence</a></li>
                               </ul>
                            </li>
                            <li  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-has-children menu-item-5629" data-size="60">
                               <a href="https://tafari-consulting.com/customer-service-programs/" class="sf-with-ul-pre">Customer Service Programs</a>
                               <ul class="sub-menu">
-                                 <li  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6124"><a href="https://tafari-consulting.com/attitudes-for-customer-service/">Attitudes for Customer Service</a></li>
-                                 <li  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6125"><a href="https://tafari-consulting.com/building-customer-loyalty/">Building Customer Loyalty</a></li>
-                                 <li  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6126"><a href="https://tafari-consulting.com/call-centre-and-customer-care-skills/">Call Centre&#038; Customer Care Skills</a></li>
-                                 <li  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6127"><a href="https://tafari-consulting.com/customer-service-excellence-for-managers/">Customer Service Excellence for managers</a></li>
-                                 <li  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6128"><a href="https://tafari-consulting.com/how-to-exceed-customers-expectations/">How to Exceed Customers’ Expectations</a></li>
-                                 <li  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6129"><a href="https://tafari-consulting.com/mastering-the-telephone/">Mastering the Telephone</a></li>
-                                 <li  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6130"><a href="https://tafari-consulting.com/ultimate-loyalty-build-teams-that-wow-the-customer/">Ultimate Loyalty: Build Teams that “WOW” the Customer</a></li>
-                                 <li  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6131"><a href="https://tafari-consulting.com/strategies-of-dealing-with-dissatisfied-customers/">Strategies of Dealing with Dissatisfied Customers</a></li>
+                                 <li  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6124"><a href="attitudes_for_customer_service/">Attitudes for Customer Service</a></li>
+                                 <li  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6125"><a href="building_customer_loyalty/">Building Customer Loyalty</a></li>
+                                 <li  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6126"><a href="call_centre_and_customer_care_skills/">Call Centre&#038; Customer Care Skills</a></li>
+                                 <li  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6127"><a href="customer_service_excellence_for_managers/">Customer Service Excellence for managers</a></li>
+                                 <li  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6128"><a href="how_to_exceed_customers_expectations/">How to Exceed Customers’ Expectations</a></li>
+                                 <li  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6129"><a href="mastering_the_telephone/">Mastering the Telephone</a></li>
+                                 <li  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6130"><a href="ultimate_loyalty_build_teams_that_wow_the_customer/">Ultimate Loyalty: Build Teams that “WOW” the Customer</a></li>
+                                 <li  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6131"><a href="strategies_of_dealing_with_dissatisfied_customers/">Strategies of Dealing with Dissatisfied Customers</a></li>
                               </ul>
                            </li>
                            <li  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-has-children menu-item-5551" data-size="60">
                               <a href="https://tafari-consulting.com/human-resource-programs/" class="sf-with-ul-pre">Human Resource Programs</a>
                               <ul class="sub-menu">
-                                 <li  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6132"><a href="https://tafari-consulting.com/managing-conflict-at-work-place/">Managing Conflict at Work Place</a></li>
+                                 <li  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6132"><a href="managing_conflict_at_work_place/">Managing Conflict at Work Place</a></li>
                                  <li  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6133"><a href="https://tafari-consulting.com/retirement-planning/">Retirement Planning</a></li>
                                  <li  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6134"><a href="https://tafari-consulting.com/labour-laws-and-regulations/">Labour Laws and Regulations</a></li>
                                  <li  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6135"><a href="https://tafari-consulting.com/coaching-yourself-and-others-for-peak-performance/">Coaching yourself and others for Peak Performance</a></li>
