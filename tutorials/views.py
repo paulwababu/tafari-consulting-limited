@@ -156,3 +156,35 @@ def stress_management_at_the_workplace(request):
 def data_and_record_management(request):
     tutorials = Tutorial.objects.all()
     return render(request, 'tutorial/data_and_record_management.html', { 'tutorials' : tutorials})
+
+def finance_for_non_finance_managers(request):
+    tutorials = Tutorial.objects.all()
+    return render(request, 'tutorial/finance_for_non_finance_managers.html', { 'tutorials' : tutorials})
+
+def effective_personal_assistant(request):
+    tutorials = Tutorial.objects.all()
+    return render(request, 'tutorial/effective_personal_assistant.html', { 'tutorials' : tutorials})
+
+def business_values_and_ethics(request):
+    tutorials = Tutorial.objects.all()
+    return render(request, 'tutorial/business_values_and_ethics.html', { 'tutorials' : tutorials})
+
+def business_etiquette(request):
+    tutorials = Tutorial.objects.all()
+    return render(request, 'tutorial/business_etiquette.html', { 'tutorials' : tutorials})
+
+def report_writing(request):
+    tutorials = Tutorial.objects.all()
+    return render(request, 'tutorial/report_writing.html', { 'tutorials' : tutorials})
+
+def knowledge_management(request):
+    tutorials = Tutorial.objects.all()
+    return render(request, 'tutorial/knowledge_management.html', { 'tutorials' : tutorials})
+
+def beyond_time_management(request):
+    tutorials = Tutorial.objects.all()
+    return render(request, 'tutorial/beyond_time_management.html', { 'tutorials' : tutorials})
+
+def meetings_and_minute_management(request):
+    tutorials = Tutorial.objects.all()
+    return render(request, 'tutorial/meetings_and_minute_management.html', { 'tutorials' : tutorials})
