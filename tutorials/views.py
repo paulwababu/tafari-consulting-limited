@@ -240,3 +240,7 @@ def sponsorship_marketing(request):
 def brand_and_crisis_communication(request):
     tutorials = Tutorial.objects.all()
     return render(request, 'tutorial/brand_and_crisis_communication.html', { 'tutorials' : tutorials})
+
+def internal_brand_engagement(request):
+    tutorials = Tutorial.objects.all()
+    return render(request, 'tutorial/internal_brand_engagement.html', { 'tutorials' : tutorials})

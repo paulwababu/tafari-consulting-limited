@@ -55,6 +55,7 @@ urlpatterns = [
     path('i_m_possible_sales/', views.i_m_possible_sales, name="i_m_possible_sales"),
     path('sponsorship_marketing/', views.sponsorship_marketing, name="sponsorship_marketing"),
     path('brand_and_crisis_communication/', views.brand_and_crisis_communication, name="brand_and_crisis_communication"),
+    path('internal_brand_engagement/', views.internal_brand_engagement, name="internal_brand_engagement"),
     path('accounts/login/', views.signin, name="login"),
     path('accounts/logout/', views.signout, name="logout"),
     path('tutorials/<int:pk>', views.deleteTutorial, name='tutorial'),
