@@ -228,3 +228,7 @@ def mastering_the_art_of_business_communication(request):
 def digital_branding(request):
     tutorials = Tutorial.objects.all()
     return render(request, 'tutorial/digital_branding.html', { 'tutorials' : tutorials})
+
+def i_m_possible_sales(request):
+    tutorials = Tutorial.objects.all()
+    return render(request, 'tutorial/i_m_possible_sales.html', { 'tutorials' : tutorials})
