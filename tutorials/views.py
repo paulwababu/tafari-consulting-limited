@@ -236,3 +236,7 @@ def i_m_possible_sales(request):
 def sponsorship_marketing(request):
     tutorials = Tutorial.objects.all()
     return render(request, 'tutorial/sponsorship_marketing.html', { 'tutorials' : tutorials})
+
+def brand_and_crisis_communication(request):
+    tutorials = Tutorial.objects.all()
+    return render(request, 'tutorial/brand_and_crisis_communication.html', { 'tutorials' : tutorials})
