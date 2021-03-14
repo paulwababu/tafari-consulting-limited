@@ -244,3 +244,7 @@ def brand_and_crisis_communication(request):
 def internal_brand_engagement(request):
     tutorials = Tutorial.objects.all()
     return render(request, 'tutorial/internal_brand_engagement.html', { 'tutorials' : tutorials})
+
+def brand_innovation_and_management(request):
+    tutorials = Tutorial.objects.all()
+    return render(request, 'tutorial/brand_innovation_and_management.html', { 'tutorials' : tutorials})
