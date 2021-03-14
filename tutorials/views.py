@@ -248,3 +248,7 @@ def internal_brand_engagement(request):
 def brand_innovation_and_management(request):
     tutorials = Tutorial.objects.all()
     return render(request, 'tutorial/brand_innovation_and_management.html', { 'tutorials' : tutorials})
+
+def effective_sales_management_techniques(request):
+    tutorials = Tutorial.objects.all()
+    return render(request, 'tutorial/effective_sales_management_techniques.html', { 'tutorials' : tutorials})
