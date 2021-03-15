@@ -71,7 +71,7 @@
       <div class="album py-5 bg-light">
         <div class="container">
           <div class="row">
-			{% for tutorial in tutorials %}
+			{% for tutorial in tutorials.object_list %}
             <div class="col-md-4">
               <div class="card mb-4 box-shadow">
                 <img class="card-img-top" src="{{ tutorial.feature_image.url }}" alt="Card image cap">
@@ -90,9 +90,35 @@
                   </div>
                 </div>
               </div>
-            </div>
-            {% endfor %}
+			</div>
+			
+			{% endfor %}
+			
 		  </div>
+		  <nav aria-label="...">
+			{% if tutorials.has_other_pages %}
+			<ul class="pagination justify-content-center">
+				{% if tutorials.has_previous %}
+			  <li class="page-item">
+				<a class="page-link" href="?page={{ tutorials.previous_page_number }}" tabindex="-1">Previous</a>
+			  </li>
+			  {% endif %}
+
+			  {% for i in tutorials.paginator.page_range %}
+				 {% if tutorials.number == i %}
+			  <li class="page-item active">
+				  <a class="page-link" href="#">{{ i }}<span class="sr-only">(current)</span></a>
+			   </li>
+			  {% endif %}
+			  {% endfor %} 
+			  <li class="page-item">
+				{% if tutorials.has_next %}
+				<a class="page-link" href="?page={{ tutorials.next_page_number }}">Next</a>
+				{% endif %}
+			  </li>
+			</ul>
+			{% endif %}
+		</nav>
 		</div>
 		{% endif %}
       </div>

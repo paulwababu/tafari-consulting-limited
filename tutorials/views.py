@@ -30,10 +30,10 @@ def signin(request):
 @login_required
 def tutorialList(request):
     tutorials = Tutorial.objects.all()
-    objects = tutorials
-    p = Paginator(objects, 2)
-    print(p)
-    return render(request, 'tutorial/list.html', { 'tutorials' : tutorials})
+    paginatedSearch = Paginator(tutorials, 6)
+    pageSearch = request.GET.get('page', 1)
+    pgSearch = paginatedSearch.page(pageSearch)
+    return render(request, 'tutorial/list.html', { 'tutorials' : pgSearch})
 
 
 def home(request):
