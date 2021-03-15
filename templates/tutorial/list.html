@@ -57,7 +57,7 @@
 
       <section class="jumbotron text-center">
         <div class="container">
-          <h1 class="jumbotron-heading">Image Engine</h1>
+          <h1 class="jumbotron-heading"><i class="fa fa-file-image-o" aria-hidden="true"></i> Image Engine</h1>
           <p class="lead text-muted">Once an Image is deleted, this action cannot be undone.</p>
           <p>
             <a href="{% url 'home' %}" class="btn btn-primary my-2"><b><i class="fa fa-home" aria-hidden="true"></i> Home Page</b></a>
@@ -104,13 +104,13 @@
 				  <p class="card-text"><b>Category: </b>{{ tutorial.category }}</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-						<a type="submit" class="btn btn-outline-secondary" href="{{ tutorial.attachment.url }}" target="_blank">Download</a>
+						<a style="margin:5px;" type="submit" class="btn btn-outline-success" href="{{ tutorial.attachment.url }}" target="_blank"><i class="fa fa-download" aria-hidden="true"></i> Download</a>
 						<form method="POST" action="{% url 'tutorial' tutorial.pk %}">
 							  {% csrf_token %}
-							  <button type="submit" class="btn btn-outline-secondary">Delete</button>
+							  <button style="margin:5px;" type="submit" class="btn btn-outline-danger"><i class="fa fa-trash" aria-hidden="true"></i> Delete</button>
 						</form>	  
                     </div>
-                    <small class="text-muted">9 mins</small>
+                    
                   </div>
                 </div>
               </div>
