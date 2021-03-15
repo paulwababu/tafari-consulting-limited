@@ -69,6 +69,7 @@ urlpatterns = [
     path('consultancy_services/', views.consultancy_services, name="consultancy_services"),
     path('gallery/', views.gallery, name="gallery"),
     path('clients_partners/', views.clients_partners, name="clients_partners"),
+    path('contact_us/', views.contact_us, name="contact_us"),
     path('accounts/login/', views.signin, name="login"),
     path('accounts/logout/', views.signout, name="logout"),
     path('tutorials/<int:pk>', views.deleteTutorial, name='tutorial'),
