@@ -288,3 +288,15 @@ def training_programs(request):
 def consultancy_services(request):
     tutorials = Tutorial.objects.all()
     return render(request, 'tutorial/consultancy_services.html', { 'tutorials' : tutorials})
+
+def gallery(request):
+    tutorials = Tutorial.objects.all()
+    return render(request, 'tutorial/gallery.html', { 'tutorials' : tutorials})
+
+def clients_partners(request):
+    tutorials = Tutorial.objects.all()
+    return render(request, 'tutorial/clients_partners.html', { 'tutorials' : tutorials})
+
+def contact_us(request):
+    tutorials = Tutorial.objects.all()
+    return render(request, 'tutorial/contact_us.html', { 'tutorials' : tutorials})
