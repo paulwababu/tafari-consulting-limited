@@ -36,7 +36,7 @@ def tutorialList(request):
     #search
     if request.method == 'POST':
         inputGiven = (request.POST['search2'])
-        tosearch = Tutorial.objects.filter(feature_image__contains='slider1')
+        tosearch = Tutorial.objects.filter(feature_image__contains=inputGiven)
         paginatedSearch2 = Paginator(tosearch, 6)
         pageSearch2 = request.GET.get('page', 1)
         pgSearch2 = paginatedSearch2.page(pageSearch2)
