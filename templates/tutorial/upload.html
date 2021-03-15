@@ -20,6 +20,7 @@
     
   </head>
   <body>
+
 	  <hr>
 	  <style>
 		      body, html {
@@ -128,20 +129,25 @@ form {
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
 }
+.bv {
+	color: #000;
+}
+
 	  </style>
 	  <div class="sidenav">
-		<a href="/">Home</a>
-		<a href="/tutorials">Cancel</a>
+		<a href="/"><b class="bv"><i class="fa fa-home" aria-hidden="true"></i> Home</b></a>
+		<a href="/tutorials"><b class="bv"><i class="fa fa-times" aria-hidden="true"></i> Cancel</b></a>
 	</div>
 
-	  <h2 class="as" style="text-align: center;"><b><i class="fa fa-upload" aria-hidden="true"></i> Upload an Image</b></h2>
-	  
+	  <h2 class="as" style="text-align: center;"><b><i class="fa fa-picture-o" aria-hidden="true"></i> Upload an Image</b></h2>
+	  <div id="tv">
 <form method="post" enctype="multipart/form-data">
 	{% csrf_token %}
 	{{ form | crispy }}
 	<br>
-	<button class="btn btn-primary btn-lg btn-block glow-on-hover" style="margin-left: 18%;" type="submit">Upload</button>
+	<button class="btn btn-primary btn-lg btn-block glow-on-hover" style="margin-left: 18%;" type="submit"><i class="fa fa-upload" aria-hidden="true"></i> Upload</button>
 </form>
+</div>
 <hr>
 
     <!-- Optional JavaScript -->
