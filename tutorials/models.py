@@ -1,9 +1,9 @@
 from django.db import models
 
 category_choice = (
-    ('slider_1', 'slider_1'),
-    ('slider_2', 'slider_2'),
-    ('slider_3', 'slider_3'),
+    ('slider1', 'slider1'),
+    ('slider2', 'slider2'),
+    ('slider3', 'slider3'),
     ('aboutus', 'aboutus'),
     ('businessprograms', 'businessprograms'),
     ('communication', 'communication'),
