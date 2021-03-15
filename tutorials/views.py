@@ -256,3 +256,7 @@ def effective_sales_management_techniques(request):
 def team_building(request):
     tutorials = Tutorial.objects.all()
     return render(request, 'tutorial/team_building.html', { 'tutorials' : tutorials})
+
+def gender_streamlining(request):
+    tutorials = Tutorial.objects.all()
+    return render(request, 'tutorial/gender_streamlining.html', { 'tutorials' : tutorials})
