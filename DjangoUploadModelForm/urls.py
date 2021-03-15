@@ -58,6 +58,7 @@ urlpatterns = [
     path('internal_brand_engagement/', views.internal_brand_engagement, name="internal_brand_engagement"),
     path('brand_innovation_and_management/', views.brand_innovation_and_management, name="brand_innovation_and_management"),
     path('effective_sales_management_techniques/', views.effective_sales_management_techniques, name="effective_sales_management_techniques"),
+    path('team_building/', views.team_building, name="team_building"),
     path('accounts/login/', views.signin, name="login"),
     path('accounts/logout/', views.signout, name="logout"),
     path('tutorials/<int:pk>', views.deleteTutorial, name='tutorial'),
