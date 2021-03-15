@@ -268,3 +268,11 @@ def customer_service_programs(request):
 def leadership_programs(request):
     tutorials = Tutorial.objects.all()
     return render(request, 'tutorial/leadership_programs.html', { 'tutorials' : tutorials})
+
+def special_category(request):
+    tutorials = Tutorial.objects.all()
+    return render(request, 'tutorial/special_category.html', { 'tutorials' : tutorials})
+
+def business_programs(request):
+    tutorials = Tutorial.objects.all()
+    return render(request, 'tutorial/business_programs.html', { 'tutorials' : tutorials})
