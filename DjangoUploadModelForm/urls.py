@@ -64,6 +64,7 @@ urlpatterns = [
     path('leadership_programs/', views.leadership_programs, name="leadership_programs"),
     path('special_category/', views.special_category, name="special_category"),
     path('business_programs/', views.business_programs, name="business_programs"),
+    path('communication_programs/', views.communication_programs, name="communication_programs"),
     path('accounts/login/', views.signin, name="login"),
     path('accounts/logout/', views.signout, name="logout"),
     path('tutorials/<int:pk>', views.deleteTutorial, name='tutorial'),

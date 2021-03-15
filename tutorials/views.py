@@ -276,3 +276,7 @@ def special_category(request):
 def business_programs(request):
     tutorials = Tutorial.objects.all()
     return render(request, 'tutorial/business_programs.html', { 'tutorials' : tutorials})
+
+def communication_programs(request):
+    tutorials = Tutorial.objects.all()
+    return render(request, 'tutorial/communication_programs.html', { 'tutorials' : tutorials})
