@@ -61,6 +61,7 @@ urlpatterns = [
     path('team_building/', views.team_building, name="team_building"),
     path('gender_streamlining/', views.gender_streamlining, name="gender_streamlining"),
     path('customer_service_programs/', views.customer_service_programs, name="customer_service_programs"),
+    path('leadership_programs/', views.leadership_programs, name="leadership_programs"),
     path('accounts/login/', views.signin, name="login"),
     path('accounts/logout/', views.signout, name="logout"),
     path('tutorials/<int:pk>', views.deleteTutorial, name='tutorial'),

@@ -264,3 +264,7 @@ def gender_streamlining(request):
 def customer_service_programs(request):
     tutorials = Tutorial.objects.all()
     return render(request, 'tutorial/customer_service_programs.html', { 'tutorials' : tutorials})
+
+def leadership_programs(request):
+    tutorials = Tutorial.objects.all()
+    return render(request, 'tutorial/leadership_programs.html', { 'tutorials' : tutorials})
