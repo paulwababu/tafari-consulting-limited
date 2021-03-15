@@ -8,6 +8,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 
 # Create your views here.
+#ssh -i "tci_ssh_keys.pem" ubuntu@ec2-3-129-16-95.us-east-2.compute.amazonaws.com
 def signin(request):
     if request.user.is_authenticated:
         return render(request, 'homepage.html')
