@@ -280,3 +280,7 @@ def business_programs(request):
 def communication_programs(request):
     tutorials = Tutorial.objects.all()
     return render(request, 'tutorial/communication_programs.html', { 'tutorials' : tutorials})
+
+def training_programs(request):
+    tutorials = Tutorial.objects.all()
+    return render(request, 'tutorial/training_programs.html', { 'tutorials' : tutorials})
