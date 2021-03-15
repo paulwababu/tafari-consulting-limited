@@ -9,7 +9,7 @@ from django.contrib.auth.models import User
 from django.core.paginator import Paginator
 
 # Create your views here.
-#ssh -i "tci_ssh_keys.pem" ubuntu@ec2-3-129-16-95.us-east-2.compute.amazonaws.com
+#ssh -i "tci_please_save.pem" ubuntu@ec2-3-142-69-209.us-east-2.compute.amazonaws.com
 def signin(request):
     if request.user.is_authenticated:
         return render(request, 'homepage.html')
