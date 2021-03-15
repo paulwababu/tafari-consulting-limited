@@ -60,6 +60,7 @@ urlpatterns = [
     path('effective_sales_management_techniques/', views.effective_sales_management_techniques, name="effective_sales_management_techniques"),
     path('team_building/', views.team_building, name="team_building"),
     path('gender_streamlining/', views.gender_streamlining, name="gender_streamlining"),
+    path('customer_service_programs/', views.customer_service_programs, name="customer_service_programs"),
     path('accounts/login/', views.signin, name="login"),
     path('accounts/logout/', views.signout, name="logout"),
     path('tutorials/<int:pk>', views.deleteTutorial, name='tutorial'),

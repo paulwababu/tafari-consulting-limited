@@ -260,3 +260,7 @@ def team_building(request):
 def gender_streamlining(request):
     tutorials = Tutorial.objects.all()
     return render(request, 'tutorial/gender_streamlining.html', { 'tutorials' : tutorials})
+
+def customer_service_programs(request):
+    tutorials = Tutorial.objects.all()
+    return render(request, 'tutorial/customer_service_programs.html', { 'tutorials' : tutorials})
