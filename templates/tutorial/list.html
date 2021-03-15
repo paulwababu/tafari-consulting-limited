@@ -57,20 +57,21 @@
 
       <section class="jumbotron text-center">
         <div class="container">
-          <h1 class="jumbotron-heading">Image Engine</h1>
+          <h1 class="jumbotron-heading">Dynamic Engine</h1>
           <p class="lead text-muted">Once an Image is deleted, this action cannot be undone.</p>
           <p>
-            <a href="{% url 'home' %}" class="btn btn-primary my-2">Home Page</a>
-			<a href="{% url 'upload_tutorial' %}" class="btn btn-secondary my-2">Upload Image</a>
-			<a href="#" class="btn btn-secondary my-2">Send SMS</a>
+            <a href="{% url 'home' %}" class="btn btn-primary my-2"><b>Home Page</b></a>
+			<a href="{% url 'upload_tutorial' %}" class="btn btn-success my-2"><b>Upload Image</b></a>
+			<a href="#" class="btn btn-warning my-2"><b>Send SMS</b></a>
+			<a href="{% url 'logout' %}" class="btn btn-danger my-2"><b>{{request.user}} | Logout</b></a>
           </p>
         </div>
       </section>
 	  {% if tutorials %}
       <div class="album py-5 bg-light">
         <div class="container">
-			{% for tutorial in tutorials %}
           <div class="row">
+			{% for tutorial in tutorials %}
             <div class="col-md-4">
               <div class="card mb-4 box-shadow">
                 <img class="card-img-top" src="{{ tutorial.feature_image.url }}" alt="Card image cap">
@@ -90,9 +91,8 @@
                 </div>
               </div>
             </div>
-            
+            {% endfor %}
 		  </div>
-		  {% endfor %}
 		</div>
 		{% endif %}
       </div>

@@ -6,6 +6,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.core.paginator import Paginator
 
 # Create your views here.
 #ssh -i "tci_ssh_keys.pem" ubuntu@ec2-3-129-16-95.us-east-2.compute.amazonaws.com
@@ -29,6 +30,9 @@ def signin(request):
 @login_required
 def tutorialList(request):
     tutorials = Tutorial.objects.all()
+    objects = tutorials
+    p = Paginator(objects, 2)
+    print(p)
     return render(request, 'tutorial/list.html', { 'tutorials' : tutorials})
 
 
