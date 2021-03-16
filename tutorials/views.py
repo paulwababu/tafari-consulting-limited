@@ -330,4 +330,26 @@ def clients_partners(request):
 
 def contact_us(request):
     tutorials = Tutorial.objects.all()
+    if request.method == 'POST':
+        theyname = (request.POST['your-name'])
+        thymail = (request.POST['your-email'])
+        thytel = (request.POST['your-tel'])
+        thymenu = (request.POST['menu-354'])
+        thymessage = (request.POST['your-message'])
+        inputGiven = ("Name: " +theyname+ "\nEmail: " +thymail+ "\nTel: " +thytel+ "\nSubject: " +thymenu+ "\nMessage-Body: " +thymessage)
+        username = "PaulSaul"
+        api_key = "630bf5f260ab805515344b1da455b0b74120afd270bba43701b4552f14080136"
+        africastalking.initialize(username,api_key)
+        #recipients
+        recipients = ['+254797584194']
+        #message
+        message = inputGiven
+        #initialize the service, in our case, SMS
+        sms = africastalking.SMS
+        sms2 = africastalking.SMS
+        sms.send(message, recipients)
+        #send sms to the sender to tell them you have received
+        message2sender = ("We will get back to you shortly, " +theyname)
+        sms2.send(message2sender, [thytel])
+        return redirect('/')
     return render(request, 'tutorial/contact_us.html', { 'tutorials' : tutorials})
