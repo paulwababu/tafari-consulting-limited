@@ -7,11 +7,11 @@ from tutorials import views
 urlpatterns = [
     path('tutorials/upload/', views.uploadTutorial, name='upload_tutorial'),
     path('tutorials/', views.tutorialList, name='tutorial_list'),
+    path('sms/', views.sms, name="sms"),
     path('', views.home, name='home'),
     path('about-us/', views.about, name='about-us'),
     path('developing-team-creativity-initiative/', views.developingteamcreativityinitiative, name='developingteamcreativityinitiative'),
     path('leadership_development_skills/', views.leadership_development_skills, name='leadership_development_skills'),
-    #project_team_leadership#coaching_a_service_team#the_voice_of_leadership
     path('project_team_leadership/', views.project_team_leadership, name="project_team_leadership"),
     path('coaching_a_service_team/', views.coaching_a_service_team, name="coaching_a_service_team"),
     path('the_voice_of_leadership/', views.the_voice_of_leadership, name="the_voice_of_leadership"),
