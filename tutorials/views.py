@@ -7,6 +7,7 @@ from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.core.paginator import Paginator
+import africastalking
 
 # Create your views here.
 #ssh -i "tci_please_save.pem" ubuntu@ec2-3-142-69-209.us-east-2.compute.amazonaws.com
@@ -65,6 +66,23 @@ def deleteTutorial(request, pk):
         tutorial = Tutorial.objects.get(pk=pk)
         tutorial.delete()
     return redirect('tutorial_list')
+
+def sms(request):
+    tutorials = Tutorial.objects.all()
+    if request.method == 'POST':
+        inputGiven = (request.POST['message'])
+        #initialize the sdk
+        username = "PaulSaul"
+        api_key = "630bf5f260ab805515344b1da455b0b74120afd270bba43701b4552f14080136"
+        africastalking.initialize(username,api_key)
+        #recipients
+        recipients = ['+254797584194']
+        #message
+        message = inputGiven
+        #initialize the service, in our case, SMS
+        sms = africastalking.SMS
+        status = sms.send(message, recipients)
+    return render(request, 'tutorial/sms.html')
 
 def signout(request):
     logout(request)
