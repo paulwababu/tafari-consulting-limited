@@ -1,23 +1,28 @@
 from django.db import models
 
-category_choice = (
-    ('slider1', 'slider1'),
-    ('slider2', 'slider2'),
-    ('slider3', 'slider3'),
-    ('aboutus', 'aboutus'),
-    ('businessprograms', 'businessprograms'),
-    ('communication', 'communication'),
-    ('consult', 'consult'),
-    ('customer', 'customer'),
-    ('hr', 'hr'),
-    ('sales', 'sales'),
-    ('special', 'special'),
-    ('train', 'train'),
-)
-
+MEDIA_CHOICES = [
+    ('HomePage', (
+        ('Slider 1', 'Slider 1'),
+        ('Slider 2', 'Slider 2'),
+        ('Slider 3', 'Slider 3'),
+        ('BusinessPrograms', 'BusinessPrograms'),
+        ('Communication', 'Communication'),
+        ('Consult', 'Consult'),
+        ('Customer', 'Customer'),
+        ('HR', 'HR'),
+        ('Sales', 'Sales'),
+        ('Special', 'Special'),
+        ('Train', 'Train'),
+        )
+    ),
+    ('About Us', (
+        ('AboutUs', 'AboutUs'),
+        )
+    ),
+]
 class Tutorial(models.Model):
     title = models.CharField(max_length=100)
-    category = models.CharField(max_length=100, choices=category_choice)
+    category = models.CharField(max_length=100, choices=MEDIA_CHOICES)
     feature_image = models.ImageField(upload_to='tutorial/images/')
     attachment = models.FileField(upload_to='tutorial/attachments/')
 
