@@ -8,6 +8,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.core.paginator import Paginator
 import africastalking
+from django.contrib import messages
 
 # Create your views here.
 #ssh -i "tci_please_save.pem" ubuntu@ec2-3-142-69-209.us-east-2.compute.amazonaws.com
@@ -37,7 +38,7 @@ def tutorialList(request):
     #search
     if request.method == 'POST':
         inputGiven = (request.POST['search2'])
-        tosearch = Tutorial.objects.filter(feature_image__contains=inputGiven)
+        tosearch = Tutorial.objects.filter(category__contains=inputGiven)
         paginatedSearch2 = Paginator(tosearch, 6)
         pageSearch2 = request.GET.get('page', 1)
         pgSearch2 = paginatedSearch2.page(pageSearch2)
@@ -54,7 +55,7 @@ def uploadTutorial(request):
     if request.method == 'POST':  
         form = TutorialForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            form.save(), messages.success(request, 'Successfully Uploaded Photo')
             return redirect('tutorial_list')
     else:
         form = TutorialForm()
@@ -64,9 +65,10 @@ def uploadTutorial(request):
 def deleteTutorial(request, pk):
     if request.method == 'POST':
         tutorial = Tutorial.objects.get(pk=pk)
-        tutorial.delete()
+        tutorial.delete(), messages.success(request, 'Successfully Deleted Photo')
     return redirect('tutorial_list')
 
+@login_required
 def sms(request):
     tutorials = Tutorial.objects.all()
     if request.method == 'POST':
@@ -75,13 +77,14 @@ def sms(request):
         username = "PaulSaul"
         api_key = "630bf5f260ab805515344b1da455b0b74120afd270bba43701b4552f14080136"
         africastalking.initialize(username,api_key)
-        #recipients
+        f = open("Contacts.txt", "r")
+        inquiryContacts = f.read()
         recipients = ['+254797584194']
         #message
         message = inputGiven
         #initialize the service, in our case, SMS
         sms = africastalking.SMS
-        status = sms.send(message, recipients)
+        sms.send(message, recipients), messages.success(request, 'Successfully Sent Photo')
     return render(request, 'tutorial/sms.html')
 
 def signout(request):
@@ -336,6 +339,10 @@ def contact_us(request):
         thytel = (request.POST['your-tel'])
         thymenu = (request.POST['menu-354'])
         thymessage = (request.POST['your-message'])
+        f = open("Contacts.txt", "a")
+        f.write(thytel)
+        f.write("\n")
+        f.close()
         inputGiven = ("Name: " +theyname+ "\nEmail: " +thymail+ "\nTel: " +thytel+ "\nSubject: " +thymenu+ "\nMessage-Body: " +thymessage)
         username = "PaulSaul"
         api_key = "630bf5f260ab805515344b1da455b0b74120afd270bba43701b4552f14080136"
@@ -350,6 +357,6 @@ def contact_us(request):
         sms.send(message, recipients)
         #send sms to the sender to tell them you have received
         message2sender = ("We will get back to you shortly, " +theyname)
-        sms2.send(message2sender, [thytel])
+        sms2.send(message2sender, [thytel]), messages.success(request, 'Message Sent, Awaiting response')
         return redirect('/')
     return render(request, 'tutorial/contact_us.html', { 'tutorials' : tutorials})
