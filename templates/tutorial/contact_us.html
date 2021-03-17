@@ -162,6 +162,23 @@
       </style>
    </head>
    <body class="page-template-default page page-id-120 gdlr-core-body _masterslider _msp_version_3.0.6 realfactory-body realfactory-body-front realfactory-full  realfactory-with-sticky-navigation gdlr-core-link-to-lightbox">
+      {% if messages %}
+    <ul class="messages">
+      <style>
+         .success {
+      list-style: none;
+      background-color: #2e6da4;
+      color: white;
+      box-shadow: 12px 12px 12px #e61c66;
+      text-align: center;
+    }
+
+      </style>
+      {% for message in messages %}
+      <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
       <div class="realfactory-mobile-header-wrap" >
          <div class="realfactory-top-bar" >
             <div class="realfactory-top-bar-background" ></div>
@@ -745,44 +762,6 @@
          </div>
       </div>
       <a href="#realfactory-top-anchor" class="realfactory-footer-back-to-top-button" id="realfactory-footer-back-to-top-button"><i class="fa fa-angle-up" ></i></a>
-      <script type="text/javascript">
-         jQuery(document).ready(function() {		
-         
-         	jQuery("a[href$='.pdf']").each(function() {
-         	   var _href = jQuery(this).attr("href"); 
-         	   jQuery(this).replaceWith("<iframe width='100%' height='700px' src='https://tafari-consulting.com/wp-content/plugins/pdf-viewer-for-wordpress/web/viewer.php?file=" + _href +"'></iframe>");
-         	});
-         
-         });
-         
-      </script>
-      <script type="text/javascript">jQuery(function($) {jQuery('a[href$=".pdf"]').attr('target', '');});</script><script type='text/javascript' src='https://tafari-consulting.com/wp-content/plugins/contact-form-7/includes/js/jquery.form.min.js?ver=3.51.0-2014.06.20'></script>
-      <script type='text/javascript'>
-         /* <![CDATA[ */
-         var _wpcf7 = {"loaderUrl":"https:\/\/tafari-consulting.com\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","recaptcha":{"messages":{"empty":"Please verify that you are not a robot."}},"sending":"Sending ..."};
-         /* ]]> */
-      </script>
-      <script type='text/javascript' src='https://tafari-consulting.com/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=4.5.1'></script>
-      <script type='text/javascript' src='https://tafari-consulting.com/wp-content/plugins/gl-core/plugins/combine/script.js?ver=4.7.4'></script>
-      <script type='text/javascript'>
-         /* <![CDATA[ */
-         var gdlr_core_pbf = {"admin":"","video":{"width":"640","height":"360"},"ajax_url":"https:\/\/tafari-consulting.com\/wp-admin\/admin-ajax.php","ilightbox_skin":"dark"};
-         /* ]]> */
-      </script>
-      <script type='text/javascript' src='https://tafari-consulting.com/wp-content/plugins/gl-core/include/js/page-builder.js?ver=4.7.4'></script>
-      <script type='text/javascript' src='https://tafari-consulting.com/wp-content/plugins/quick-event-manager/quick-event-manager.js?ver=4.7.4'></script>
-      <script type='text/javascript' src='https://tafari-consulting.com/wp-includes/js/jquery/ui/effect.min.js?ver=1.11.4'></script>
-      <script type='text/javascript'>
-         /* <![CDATA[ */
-         var realfactory_script_core = {"home_url":"https:\/\/tafari-consulting.com\/"};
-         /* ]]> */
-      </script>
-      <script type='text/javascript' src='https://tafari-consulting.com/wp-content/themes/theme/js/script-core.js?ver=1.0.0'></script>
-      <script type='text/javascript'>
-         var q2w3_sidebar_options = new Array();
-         q2w3_sidebar_options[0] = { "sidebar" : "gdlr-core-sidebar-preset", "margin_top" : 50, "margin_bottom" : 570, "stop_id" : "", "screen_max_width" : 769, "screen_max_height" : 0, "width_inherit" : false, "refresh_interval" : 1500, "window_load_hook" : false, "disable_mo_api" : false, "widgets" : ['nav_menu-7','nav_menu-8','black-studio-tinymce-2'] };
-      </script>
-      <script type='text/javascript' src='https://tafari-consulting.com/wp-content/plugins/fixed/js/q2w3-fixed-widget.min.js?ver=5.0.4'></script>
-      <script type='text/javascript' src='https://tafari-consulting.com/wp-includes/js/wp-embed.min.js?ver=4.7.4'></script>
-   </body>
+
+      </body>
 </html>
