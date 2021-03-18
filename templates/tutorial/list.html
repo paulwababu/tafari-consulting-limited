@@ -76,11 +76,13 @@
           <h1 class="jumbotron-heading"><i class="fa fa-file-image-o" aria-hidden="true"></i> Image Engine</h1>
           <p class="lead text-muted">Once an Image is deleted, this action cannot be undone.</p>
           <p>
-            <a href="{% url 'home' %}" class="btn btn-primary my-2"><b><i class="fa fa-home" aria-hidden="true"></i> Home Page</b></a>
-			<a href="{% url 'upload_tutorial' %}" class="btn btn-success my-2"><b><i class="fa fa-upload" aria-hidden="true"></i> Upload Image</b></a>
-			<a href="{% url 'sms' %}" class="btn btn-warning my-2"><b><i class="fa fa-envelope-o"></i> Send SMS</b></a>
-			<a href="{% url 'logout' %}" class="btn btn-danger my-2"><b><i class="fa fa-user" aria-hidden="true"></i> {{request.user}} | Logout</b></a>
-          </p>
+            <a href="{% url 'home' %}" class="btn btn-primary my-2"><b><i class="fa fa-home" aria-hidden="true"></i> Home</b></a>
+			<a href="{% url 'upload_tutorial' %}" class="btn btn-success my-2"><b><i class="fa fa-upload" aria-hidden="true"></i> Upload</b></a>
+			<a href="{% url 'sms' %}" class="btn btn-warning my-2"><b><i class="fa fa-envelope-o"></i> SMS</b></a>
+      <a href="{% url 'traffic_monitor' %}" class="btn btn-secondary my-2"><b><i class="fa fa-user" aria-hidden="true"></i> Site Visitors</b></a>
+      <a href="{% url 'logout' %}" class="btn btn-danger my-2"><b><i class="fa fa-user" aria-hidden="true"></i> {{request.user}} | Logout</b></a>
+      
+    </p>
         </div>
 	  </section>
 
