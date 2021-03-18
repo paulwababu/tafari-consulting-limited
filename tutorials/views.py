@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import TutorialForm
-from .models import Tutorial
+from .models import Tutorial, Monitor
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import logout
@@ -9,7 +9,13 @@ from django.contrib.auth.models import User
 from django.core.paginator import Paginator
 import africastalking
 from django.contrib import messages
-
+import os
+import psutil
+import urllib3
+import json
+import requests
+import datetime
+from django.core.paginator import Paginator
 # Create your views here.
 #ssh -i "tci_please_save.pem" ubuntu@ec2-3-142-69-209.us-east-2.compute.amazonaws.com
 def signin(request):
@@ -48,7 +54,56 @@ def tutorialList(request):
 
 def home(request):
     tutorials = Tutorial.objects.all()
-    return render(request, 'tutorial/home.html', { 'tutorials' : tutorials})    
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[0]
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+    response = requests.get('http://api.ipstack.com/'+ip+'?access_key=ee7d4335635d89a71b95dcc33eb2a044')
+    rawData = response.json()
+    continent = rawData['continent_name']
+    country = rawData['country_name']
+    capital = rawData['city']
+    city = rawData['location']['capital']
+    now = datetime.datetime.now()
+    datetimenow = now.strftime("%Y-%m-%d %H:%M:%S")
+    saveNow = Monitor(
+        continent=continent,
+        country=country,
+        capital=capital,
+        city=city,
+        datetime=datetimenow,
+        ip=ip
+    )
+    saveNow.save()
+    return render(request, 'tutorial/home.html', { 'tutorials' : tutorials})
+
+@login_required
+def traffic_monitor(request):
+    dataSaved = Monitor.objects.all()
+    # Getting loadover15 minutes 
+    load1, load5, load15 = psutil.getloadavg()
+    cpu_usage = int((load15/os.cpu_count()) * 100)
+    ram_usage = int(psutil.virtual_memory()[2])
+    p = Paginator(dataSaved, 10)
+    #shows number of items in page
+    totalSiteVisits = (p.count)
+    #find unique page viewers & Duration
+    pageNum = request.GET.get('page', 1)
+    page1 = p.page(pageNum)
+    #unique page viewers
+    a = Monitor.objects.order_by().values('ip').distinct()
+    pp = Paginator(a, 10)
+    #shows number of items in page
+    unique = (pp.count)
+    data = {
+        "unique":unique,
+        "totalSiteVisits":totalSiteVisits,
+        "cpu_usage": cpu_usage,
+        "ram_usage": ram_usage,
+        "dataSaved": page1,
+    }
+    return render(request, 'tutorial/traffic_monitor.html', data)
 
 @login_required
 def uploadTutorial(request):
