@@ -6,7 +6,6 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.core.paginator import Paginator
 import africastalking
 from django.contrib import messages
 import os
@@ -17,7 +16,7 @@ import requests
 import datetime
 from django.core.paginator import Paginator
 # Create your views here.
-#ssh -i "tci_please_save.pem" ubuntu@ec2-3-142-69-209.us-east-2.compute.amazonaws.com
+#ssh -i "tci_please_save.pem" ubuntu@ec2-18-223-88-101.us-east-2.compute.amazonaws.com
 def signin(request):
     if request.user.is_authenticated:
         return render(request, 'homepage.html')
@@ -132,8 +131,6 @@ def sms(request):
         username = "PaulSaul"
         api_key = "630bf5f260ab805515344b1da455b0b74120afd270bba43701b4552f14080136"
         africastalking.initialize(username,api_key)
-        f = open("Contacts.txt", "r")
-        inquiryContacts = f.read()
         recipients = ['+254797584194']
         #message
         message = inputGiven
@@ -386,6 +383,14 @@ def clients_partners(request):
     tutorials = Tutorial.objects.all()
     return render(request, 'tutorial/clients_partners.html', { 'tutorials' : tutorials})
 
+def human_resource_programs(request):
+    tutorials = Tutorial.objects.all()
+    return render(request, 'tutorial/human_resource_programs.html', { 'tutorials' : tutorials})
+
+def sales_and_marketing(request):
+    tutorials = Tutorial.objects.all()
+    return render(request, 'tutorial/sales_and_marketing.html', { 'tutorials' : tutorials})
+
 def contact_us(request):
     tutorials = Tutorial.objects.all()
     if request.method == 'POST':
@@ -394,10 +399,6 @@ def contact_us(request):
         thytel = (request.POST['your-tel'])
         thymenu = (request.POST['menu-354'])
         thymessage = (request.POST['your-message'])
-        f = open("Contacts.txt", "a")
-        f.write(thytel)
-        f.write("\n")
-        f.close()
         inputGiven = ("Name: " +theyname+ "\nEmail: " +thymail+ "\nTel: " +thytel+ "\nSubject: " +thymenu+ "\nMessage-Body: " +thymessage)
         username = "PaulSaul"
         api_key = "630bf5f260ab805515344b1da455b0b74120afd270bba43701b4552f14080136"
