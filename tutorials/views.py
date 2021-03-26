@@ -401,7 +401,7 @@ def contact_us(request):
         thymessage = (request.POST['your-message'])
         inputGiven = ("Name: " +theyname+ "\nEmail: " +thymail+ "\nTel: " +thytel+ "\nSubject: " +thymenu+ "\nMessage-Body: " +thymessage)
         username = "PaulSaul"
-        api_key = "630bf5f260ab805515344b1da455b0b74120afd270bba43701b4552f14080136"
+        api_key = "bac664d33d4f6f5a556aec0b8c88898112215d38056695b7f79e09035c2c6e46"
         africastalking.initialize(username,api_key)
         #recipients
         recipients = ['+254797584194']
