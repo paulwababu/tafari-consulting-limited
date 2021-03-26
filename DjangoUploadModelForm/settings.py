@@ -131,6 +131,7 @@ STATICFILES_DIRS = [
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
+CRISPY_TEMPLATE_PACK="bootstrap4"
 # Security
 CSRF_COOKIE_SECURE = True #to avoid transmitting the CSRF cookie over HTTP accidentally.
 SESSION_COOKIE_SECURE = True #to avoid transmitting the session cookie over HTTP accidentally.
