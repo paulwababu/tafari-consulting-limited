@@ -72,7 +72,7 @@ urlpatterns = [
     path('clients_partners/', views.clients_partners, name="clients_partners"),
     path('contact_us/', views.contact_us, name="contact_us"),
     path('sales_and_marketing/', views.sales_and_marketing, name="sales_and_marketing"),
-    path('human_resource_programs,', views.human_resource_programs, name="human_resource_programs"),
+    path('human_resource_programs/', views.human_resource_programs, name="human_resource_programs"),
     ####################
     path('about_us/', views.about, name='about-us'),
     path('developing_team_creativity_initiative/', views.developingteamcreativityinitiative, name='developingteamcreativityinitiative'),
@@ -136,7 +136,7 @@ urlpatterns = [
     path('clients-partners/', views.clients_partners, name="clients_partners"),
     path('contact-us/', views.contact_us, name="contact_us"),
     path('sales-and-marketing/', views.sales_and_marketing, name="sales_and_marketing"),
-    path('human-resource-programs,', views.human_resource_programs, name="human_resource_programs"),
+    path('human-resource-programs/', views.human_resource_programs, name="human_resource_programs"),
     
     ####################
     path('accounts/login/', views.signin, name="login"),
