@@ -24,7 +24,7 @@ SECRET_KEY = 'qap$6$cd*v*i#rvef&q&7%j%4dk36z0u^j&y(%^dq!ieb1pm*s'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['tafari-consulting.com']
 
 # Application definition
 
@@ -107,7 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Africa/Nairobi'
 
 USE_I18N = True
 
@@ -133,18 +133,6 @@ LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
 CRISPY_TEMPLATE_PACK="bootstrap4"
-# Security
-CSRF_COOKIE_SECURE = True #to avoid transmitting the CSRF cookie over HTTP accidentally.
-SESSION_COOKIE_SECURE = True #to avoid transmitting the session cookie over HTTP accidentally.
-
-SECURE_BROWSER_XSS_FILTER = True
-SECURE_CONTENT_TYPE_NOSNIFF = True
-
-SECURE_SSL_REDIRECT = True
-
-SECURE_HSTS_SECONDS = 15780000  # 6 months
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-SECURE_HSTS_PRELOAD = True
 
 #Add the following lines to settings.py
 # Content Security Policy
@@ -156,5 +144,6 @@ CSP_IMG_SRC = ("'self'", 'icomnalt.sirv.com', 'colormatemedia.com')
 CSP_FONT_SRC = ("'self'", 'maxcdn.bootstrapcdn.com', 'stackpath.bootstrapcdn.com', 'fonts.gstatic.com', 'paulkiragu621.github.io')
 CSP_INCLUDE_NONCE_IN = ("script-src")
 CSP_FRAME_SRC = ["https://www.google.com"]
-CSP_SCRIPT_SRC_ELEM = ("'self'", "'unsafe-inline'", 'ajax.googleapis.com')
+CSP_SCRIPT_SRC_ELEM = ("'self'", "'unsafe-inline'", 'stackpath.bootstrapcdn.com', 'cdnjs.cloudflare.com', 'ajax.googleapis.com')
 CSP_CONNECT_SRC = ("'self'", "'unsafe-inline'")
+CSP_STYLE_SRC_ELEM = ("'self'", "'unsafe-inline'", 'getbootstrap.com', 'stackpath.bootstrapcdn.com')
