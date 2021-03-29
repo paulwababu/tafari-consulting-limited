@@ -44,6 +44,7 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    'csp.middleware.CSPMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -144,3 +145,16 @@ SECURE_SSL_REDIRECT = True
 SECURE_HSTS_SECONDS = 15780000  # 6 months
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True
+
+#Add the following lines to settings.py
+# Content Security Policy
+CSP_DEFAULT_SRC = ("'none'", )
+CSP_BASE_URI = ("'none'", )
+CSP_STYLE_SRC = ("'unsafe-inline'", "'self'", 'maxcdn.bootstrapcdn.com', 'paulkiragu621.github.io', 'fonts.googleapis.com', 'stackpath.bootstrapcdn.com')
+CSP_SCRIPT_SRC = ("'self'", 'ajax.googleapis.com', 'paulkiragu621.github.io', 'stackpath.bootstrapcdn.com')
+CSP_IMG_SRC = ("'self'", 'icomnalt.sirv.com', 'colormatemedia.com')
+CSP_FONT_SRC = ("'self'", 'maxcdn.bootstrapcdn.com', 'stackpath.bootstrapcdn.com', 'fonts.gstatic.com', 'paulkiragu621.github.io')
+CSP_INCLUDE_NONCE_IN = ("script-src")
+CSP_FRAME_SRC = ["https://www.google.com"]
+CSP_SCRIPT_SRC_ELEM = ("'self'", "'unsafe-inline'", 'ajax.googleapis.com')
+CSP_CONNECT_SRC = ("'self'", "'unsafe-inline'")
