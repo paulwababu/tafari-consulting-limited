@@ -146,4 +146,4 @@ CSP_INCLUDE_NONCE_IN = ("script-src")
 CSP_FRAME_SRC = ["https://www.google.com"]
 CSP_SCRIPT_SRC_ELEM = ("'self'", "'unsafe-inline'", 'stackpath.bootstrapcdn.com', 'cdnjs.cloudflare.com', 'ajax.googleapis.com')
 CSP_CONNECT_SRC = ("'self'", "'unsafe-inline'")
-CSP_STYLE_SRC_ELEM = ("'self'","'unsafe-inline'",'fonts.googleapis.com', 'getbootstrap.com', 'stackpath.bootstrapcdn.com')
+CSP_STYLE_SRC_ELEM = ("'self'","'unsafe-inline'", 'paulkiragu621.github.io','fonts.googleapis.com', 'getbootstrap.com', 'stackpath.bootstrapcdn.com')
