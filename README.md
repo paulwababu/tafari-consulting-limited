@@ -1,5 +1,17 @@
 # Tafari-Consulting Web Application
 
+# Sneak Peak
+
+# HomePage, Image Engine, Website Visitors Analysis, Security Ranking
+
+![home](https://user-images.githubusercontent.com/44939805/112846206-77969a80-90ae-11eb-9df1-785d1593a03a.png)
+
+![image](https://user-images.githubusercontent.com/44939805/112846289-8da45b00-90ae-11eb-946f-8711417b50da.png)
+
+![Resource](https://user-images.githubusercontent.com/44939805/112846311-96952c80-90ae-11eb-96ed-83f66fc46058.png)
+
+![csp-tafari](https://user-images.githubusercontent.com/44939805/112846323-9a28b380-90ae-11eb-86ad-5ef13e99a6c0.png)
+
 # New Features
 
 1. Web aaplication allows system admin of the site to delete and upload images on the website by using a simple form
@@ -275,12 +287,3 @@ CSP_FRAME_SRC = ["https://www.google.com"]
 CSP_SCRIPT_SRC_ELEM = ("'self'", "'unsafe-inline'", 'stackpath.bootstrapcdn.com', 'cdnjs.cloudflare.com', 'ajax.googleapis.com')
 CSP_CONNECT_SRC = ("'self'", "'unsafe-inline'")
 CSP_STYLE_SRC_ELEM = ("'self'","'unsafe-inline'", 'paulkiragu621.github.io','fonts.googleapis.com', 'getbootstrap.com', 'stackpath.bootstrapcdn.com')
-
-# Sneak Peak
-
-# HomePage, Image Engine, Website Visitors Analysis, Security Ranking
-
-![home](https://user-images.githubusercontent.com/44939805/112846206-77969a80-90ae-11eb-9df1-785d1593a03a.png)
-![image](https://user-images.githubusercontent.com/44939805/112846289-8da45b00-90ae-11eb-946f-8711417b50da.png)
-![Resource](https://user-images.githubusercontent.com/44939805/112846311-96952c80-90ae-11eb-96ed-83f66fc46058.png)
-![csp-tafari](https://user-images.githubusercontent.com/44939805/112846323-9a28b380-90ae-11eb-86ad-5ef13e99a6c0.png)
