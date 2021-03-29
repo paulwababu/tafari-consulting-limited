@@ -24,7 +24,7 @@ SECRET_KEY = 'qap$6$cd*v*i#rvef&q&7%j%4dk36z0u^j&y(%^dq!ieb1pm*s'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['tafari-consulting.com']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -141,9 +141,9 @@ CSP_BASE_URI = ("'none'", )
 CSP_STYLE_SRC = ("'unsafe-inline'", "'self'", 'maxcdn.bootstrapcdn.com', 'paulkiragu621.github.io', 'fonts.googleapis.com', 'stackpath.bootstrapcdn.com')
 CSP_SCRIPT_SRC = ("'self'", 'ajax.googleapis.com', 'paulkiragu621.github.io', 'stackpath.bootstrapcdn.com')
 CSP_IMG_SRC = ("'self'", 'icomnalt.sirv.com', 'colormatemedia.com')
-CSP_FONT_SRC = ("'self'", 'maxcdn.bootstrapcdn.com', 'stackpath.bootstrapcdn.com', 'fonts.gstatic.com', 'paulkiragu621.github.io')
+CSP_FONT_SRC = ("'self'", 'maxcdn.bootstrapcdn.com', 'stackpath.bootstrapcdn.com', 'fonts.gstatic.com', 'paulkiragu621.github.io', 'fonts.googleapis.com')
 CSP_INCLUDE_NONCE_IN = ("script-src")
 CSP_FRAME_SRC = ["https://www.google.com"]
 CSP_SCRIPT_SRC_ELEM = ("'self'", "'unsafe-inline'", 'stackpath.bootstrapcdn.com', 'cdnjs.cloudflare.com', 'ajax.googleapis.com')
 CSP_CONNECT_SRC = ("'self'", "'unsafe-inline'")
-CSP_STYLE_SRC_ELEM = ("'self'", "'unsafe-inline'", 'getbootstrap.com', 'stackpath.bootstrapcdn.com')
+CSP_STYLE_SRC_ELEM = ("'self'","'unsafe-inline'",'fonts.googleapis.com', 'getbootstrap.com', 'stackpath.bootstrapcdn.com')
