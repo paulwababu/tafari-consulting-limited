@@ -149,6 +149,8 @@ SECURE_HSTS_PRELOAD = True
 # Content Security Policy
 CSP_DEFAULT_SRC = ("'none'", )
 CSP_BASE_URI = ("'none'", )
+CSP_FRAME_ANCESTORS = ("'none'", )
+CSP_FORM_ACTION = ("'none'", )
 CSP_STYLE_SRC = ("'unsafe-inline'", "'self'", 'maxcdn.bootstrapcdn.com', 'paulkiragu621.github.io', 'fonts.googleapis.com', 'stackpath.bootstrapcdn.com')
 CSP_SCRIPT_SRC = ("'self'", 'ajax.googleapis.com', 'paulkiragu621.github.io', 'stackpath.bootstrapcdn.com')
 CSP_IMG_SRC = ("'self'", 'icomnalt.sirv.com', 'colormatemedia.com')
