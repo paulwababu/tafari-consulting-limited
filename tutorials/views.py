@@ -95,7 +95,10 @@ def traffic_monitor(request):
     pp = Paginator(a, 10)
     #shows number of items in page
     unique = (pp.count)
+    #update time
+    now = datetime.datetime.now()
     data = {
+        "now":now,
         "unique":unique,
         "totalSiteVisits":totalSiteVisits,
         "cpu_usage": cpu_usage,
